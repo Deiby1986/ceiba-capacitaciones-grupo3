@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgregarLibroComponent } from './components/agregar-libro/agregar-libro.component';
 
+import { HttpClientModule  } from '@angular/common/http';
+
+// Modulos
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,7 +20,10 @@ import { AgregarLibroComponent } from './components/agregar-libro/agregar-libro.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

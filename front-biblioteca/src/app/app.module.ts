@@ -5,17 +5,22 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AgregarLibroComponent } from './components/agregar-libro/agregar-libro.component';
+import { TabsModule } from 'ngx-bootstrap/tabs';
+import { ModalModule } from 'ngx-bootstrap/modal';
+
 
 import { HttpClientModule  } from '@angular/common/http';
 
 // Modulos
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { ModalErrorComponent } from './components/modal-error/modal-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarLibroComponent
+    AgregarLibroComponent,
+    ModalErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -23,9 +28,14 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    TabsModule.forRoot(),
+    ModalModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalErrorComponent
+  ],
 })
 export class AppModule { }

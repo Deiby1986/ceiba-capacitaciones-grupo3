@@ -1,13 +1,13 @@
 /**
  * Modelo con la informacion correspondiente a una tarea
  */
-export class Libro {
-    constructor(
-        public id: number,
-        public isbn: string,
-        public nombre: string,
-        public autor: string,
-        public estado: string,
-        public editorial: string
-    ){}
+export interface Libro {
+
+    id?: number;
+    isbn: string;
+    nombre: string;
+    autor: string;
+    estado?: string;
+    editorial: string;
+
 }

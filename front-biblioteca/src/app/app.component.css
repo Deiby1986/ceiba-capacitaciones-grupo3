@@ -1,0 +1,17 @@
+.navbar-dark{
+    background-color: #563d7c;
+}
+
+ .navbar-brand img {
+      height: 40px;
+      width: 40px;
+ }
+  
+.navbar-collapse{
+    
+    cursor: pointer;
+}
+    
+.nav-item{
+    cursor: pointer;
+} 

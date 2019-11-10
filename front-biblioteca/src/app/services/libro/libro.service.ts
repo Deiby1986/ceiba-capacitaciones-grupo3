@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { Libro } from 'src/app/models/libro';
 import { environment } from "../../helper/environment";
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,15 @@ export class LibroService {
   ) { }
 
   agregarLibro(libro: Libro){
-    return this.http.post<any>(environment + '/libro/agregar', libro)
+    return this.http.post<any>(environment.endpointBacken + '/libro/agregar', libro)
     .pipe(map(res => {
       console.log("Usuario respuesta", res);
       
       return res;
     }));
+  }
+
+  obtener():Observable<Libro[]>{
+    return this.http.get<any>(environment.endpointBacken + '/libro/agregar')
   }
 }

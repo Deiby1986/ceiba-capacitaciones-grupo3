@@ -1,0 +1,34 @@
+<div *ngIf="(libros | async)?.length > 0">
+        <div class="filter-wrap input-group">
+            <input [(ngModel)]="searchText" placeholder="Filtrar libro" class="form-control py-2 border-right-0 border" id="searchTaskText">
+            <span class="input-group-append" *ngIf="searchText.length>0" (click)="clearFilter()">
+                <button class="btn btn-outline-secondary" type="button" id="button-remove">Borrar</button>
+            </span>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ISBN</th>
+                        <th>NOMBRE</th>
+                        <th>AUTOR</th>
+                        <th>ESTADO</th>
+                        <th>EDITORIAL</th>
+                        <th>OPCIONES</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let libro of libros | filter : searchText | async" >
+                        <td>{{libro.id}}</td>
+                        <td>{{libro.ISBN}}</td>
+                        <td>{{libro.nombre}}</td>
+                        <td>{{libro.autor}}</td>
+                        <td>{{libro.estado}}</td>
+                        <td>{{libro.editorial}}</td>
+                        <td><a routerLink="/prestar-libro">Prestar</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>

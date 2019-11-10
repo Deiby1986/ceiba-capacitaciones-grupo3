@@ -11,16 +11,21 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { HttpClientModule  } from '@angular/common/http';
 
+import { FilterPipe } from './pipes/filter/filter.pipe';
+
 // Modulos
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { ModalErrorComponent } from './components/modal-error/modal-error.component';
+import { ListaLibrosComponent } from './components/lista-libros/lista-libros.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AgregarLibroComponent,
-    ModalErrorComponent
+    ModalErrorComponent,
+    ListaLibrosComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
